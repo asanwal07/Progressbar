@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+}
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  /* flex-direction: row; */
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  /* vh will automatically adjust the height according to browser */
+  /* align items center the items in the middle of the screen verticalyy(from the top) */
+  /* justify content center will  center the content in the middle of viewport. */
+  /* The overflow property specifies what should happen if content overflows an element's box. */
+  cursor: pointer;
+  background-color: rgb(203, 157, 235);
+}
+
+.container {
+  text-align: center;
+  /* border: 2px solid white; */
+}
+.progresscont {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+.progresscont::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 54%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 100%;
+  z-index: -1;
+}
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 54%;
+  left: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+.btn {
+  background-color: var(--line-border-fill);
+  color: white;
+  width: 100px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  border-radius: 5px;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: rgb(146, 19, 219);
+}
+.btn:focus {
+  outline: 0;
+}
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
+.btn:active {
+  transform: scale(0.5);
+}
+.circle {
+  background-color: white;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.5s ease;
+}
+.circle.active {
+  border-color: var(--line-border-fill);
+}
